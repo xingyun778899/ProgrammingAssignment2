@@ -21,7 +21,7 @@ really a list containing a function to
 
 <!-- -->
 
-    makeMatrix <- function(x = matrix()) {
+    makeCacheMatrix <- function(x = matrix()) {
       m <- NULL
       set <- function(y) {
         x <<- y
@@ -42,7 +42,7 @@ cache and skips the computation. Otherwise, it calculates the inverse of
 the matrix and sets the value of the inverse in the cache via the `setinverse`
 function.
 
-    cacheInverse <- function(x, ...) {
+    cacheSolve <- function(x, ...) {
       m <- x$getInverse()
       if(!is.null(m)) {
         message("getting cached data")
@@ -60,7 +60,7 @@ function.
 ### my_matrix <- makeCacheMatrix(matrix(1:4,nrow =2,ncol = 2))
 ### my_matrix$get()
 ### my_matrix$getInverse()
-### cacheInverse(my_matrix)
+### cacheSolve(my_matrix)
 
 
 
